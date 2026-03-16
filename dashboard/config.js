@@ -1,1 +1,1 @@
-const GOOGLE_MAPS_KEY = "AIzaSyBylfB7SiRYMBfGFgXIb9cS0gusLl3mkxk";
+const API_KEY = process.env.API_KEY;
