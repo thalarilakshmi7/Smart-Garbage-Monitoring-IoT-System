@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Smart Garbage Monitoring Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</head>
+
+<body>
+
+<header>
+<h1>♻ Smart Garbage Monitoring System</h1>
+</header>
+
+<div class="controls">
+
+<button onclick="loadBins()">Load Bin Status</button>
+
+<button onclick="loadAlerts()">Full Bin Alerts</button>
+
+<button onclick="loadRoute()">Optimized Route</button>
+
+<button onclick="loadComplaints()">Citizen Complaints</button>
+
+</div>
+
+<div class="filter">
+
+<label>Filter Bin Status:</label>
+
+<select id="filter" onchange="loadBins()">
+
+<option value="ALL">All</option>
+<option value="FULL">Full</option>
+<option value="HALF">Half</option>
+<option value="EMPTY">Empty</option>
+
+</select>
+
+</div>
+
+<div id="map"></div>
+
+<div class="dashboard">
+
+<div class="panel">
+<h2>Bins</h2>
+<div id="bins"></div>
+</div>
+
+<div class="panel">
+<h2>Alerts</h2>
+<div id="alerts"></div>
+</div>
+
+<div class="panel">
+<h2>Optimized Route</h2>
+<div id="route"></div>
+</div>
+
+<div class="panel">
+<h2>Complaints</h2>
+<div id="complaints"></div>
+</div>
+
+</div>
+
+<h2 class="complaint-title">Submit Complaint</h2>
+
+<form id="complaintForm">
+
+<input id="name" placeholder="Name" required>
+
+<input id="location" placeholder="Location" required>
+
+<textarea id="message" placeholder="Complaint"></textarea>
+
+<button type="submit">Submit</button>
+
+</form>
+
+<div id="popup" class="popup">
+
+<div class="popup-content">
+
+<span class="close" onclick="closePopup()">✖</span>
+
+<div id="popupData"></div>
+
+</div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
